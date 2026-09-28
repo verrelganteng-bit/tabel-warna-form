@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Mahasiswa</title>
+</head>
+
+<body>
+
+    <h2>FORM DATA MAHASISWA</h2>
+
+    <form id="formMahasiswa">
+
+        <table cellpadding="6">
+
+            <tr>
+                <td><label for="nama">Nama</label></td>
+                <td>
+                    <input type="text" id="nama" name="nama" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="nim">NIM</label></td>
+                <td>
+                    <input type="text" id="nim" name="nim" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="lahir">Tanggal Lahir</label></td>
+                <td>
+                    <input type="date" id="lahir" name="tanggal_lahir" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <label>
+                        <input type="radio" name="jenis_kelamin" value="Laki-Laki" required>
+                        Laki-Laki
+                    </label>
+
+                    <label>
+                        <input type="radio" name="jenis_kelamin" value="Perempuan">
+                        Perempuan
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="alamat">Alamat di Bandung</label></td>
+                <td>
+                    <textarea id="alamat" name="alamat" rows="4" cols="30"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="tempat">Tinggal di</label></td>
+                <td>
+                    <select id="tempat" name="tempat_tinggal" required>
+                        <option value="">--pilih--</option>
+                        <option value="Kos/Kontrakan">Kos/Kontrakan</option>
+                        <option value="Rumah saudara">Rumah saudara</option>
+                        <option value="Rumah orang tua">Rumah orang tua</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Hobi</td>
+                <td>
+                    <input type="checkbox" name="hobi" value="mabar">
+                    Mabar
+
+                    <input type="checkbox" name="hobi" value="bepergian">
+                    Bepergian
+
+                    <input type="checkbox" name="hobi" value="tidur">
+                    Tidur
+
+                    <input type="checkbox" name="hobi" value="makan">
+                    Makan
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">kirim</button>
+                    <button type="reset">batal</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+    <script>
+        document.getElementById("formMahasiswa").onsubmit = function(e) {
+
+            let pilihan = document.querySelectorAll(
+                'input[name="hobi"]:checked'
+            );
+
+            if (pilihan.length != 2) {
+                alert("Pilih 2 hobi yang paling disukai.");
+                e.preventDefault();
+            }
+        };
+    </script>
+
+</body>
+</html>
